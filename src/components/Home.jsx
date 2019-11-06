@@ -31,7 +31,7 @@ export default class Home extends Component {
                 <Form.Group as={Col}>
                   <Form.Control
                     type="search"
-                    placeholder="type the city iata or name in here"
+                    placeholder="type the city name in here"
                     onChange={e => this.setState({ city: e.target.value })}
                   />
                 </Form.Group>

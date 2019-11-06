@@ -14,10 +14,10 @@ export default class Flights extends Component {
         <Tabs className='tabStyles'>
           <TabList>
             <Tab>
-              <h5>Departing Flights</h5>
+              <h5>Departing Flights ({this.props.departingData.length})</h5>
             </Tab>
             <Tab>
-              <h5>Arriving Flights</h5>
+              <h5>Arriving Flights ({this.props.arrivingData.length})</h5>
             </Tab>
           </TabList>
 
@@ -40,22 +40,6 @@ export default class Flights extends Component {
             />
           </TabPanel>
         </Tabs>
-
-        {/* <Map 
-               data={this.props.departingData}
-               lat={this.props.selectedCityLat}
-               long={this.props.selectedCityLong}
-               sourceLine={greenRgb}
-               targetLine={redRgb}
-             />
- 
-            <Map
-              data={this.props.arrivingData}
-              lat={this.props.selectedCityLat}
-              long={this.props.selectedCityLong}
-              sourceLine={redRgb}
-              targetLine={greenRgb}
-            /> */}
       </div>
     );
   }

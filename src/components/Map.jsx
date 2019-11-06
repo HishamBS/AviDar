@@ -1,6 +1,6 @@
-import React, { useState, Component } from "react";
+import React, { Component } from "react";
 import ReactMapGL from "react-map-gl";
-import DeckGL, { ArcLayer, ScatterplotLayer } from "deck.gl";
+import DeckGL, { ArcLayer } from "deck.gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import "../index.css";
 import { Container } from "react-bootstrap";
@@ -14,7 +14,7 @@ export default class Map extends Component {
         width: "100vw",
         latitude: props.lat,
         longitude: props.long,
-        zoom: 2
+        zoom: 3
       },
       flightNumber: "",
       airLineIata: "",
@@ -28,27 +28,14 @@ export default class Map extends Component {
 
   render() {
     return (
-      <div
-        style={
-          {
-            // position: "absolute",
-            // top: 120,
-            // left: 120,
-            // height: "100vh",
-            // width: "100vw",
-          }
-        }
-      >
-        {/* <Container>
-    <Row className='show-grid'>
-    <Col> */}
+      <div>
         <ReactMapGL
           className="mapView"
           // zoom={3}
           {...this.state.viewport}
           onViewportChange={viewport => this.setState({ viewport })}
           mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_API_KEY}
-          mapStyle="mapbox://styles/mapbox/light-v9"
+          mapStyle="mapbox://styles/mapbox/streets-v11"
           // scrollZoom={false}
           touchZoom={true}
         >
@@ -57,6 +44,7 @@ export default class Map extends Component {
             viewState={this.state.viewport}
             layers={[
               new ArcLayer({
+                
                 id: "flight-arcs",
                 data: this.props.data,
                 pickable: true,
@@ -64,10 +52,10 @@ export default class Map extends Component {
                 getTargetPosition: d => d.target,
                 getSourceColor: () => this.props.sourceLine,
                 getTargetColor: () => this.props.targetLine,
-                getWidth: () => 10,
-                getTilt: 50,
+                getWidth: () => 7,
+                getTilt: 80,
                 onHover: ({ object, x, y }) => {
-                    console.log(object)
+                  console.log(object);
                   try {
                     this.setState({
                       flightNumber: object.flightNumber,
@@ -85,7 +73,10 @@ export default class Map extends Component {
           />
         </ReactMapGL>
         <Container>
-          <div className='info' style={this.state.isHidden?{display:'none'}:{}}>
+          <div
+            className="info"
+            style={this.state.isHidden ? { display: "none" } : {}}
+          >
             <h6>Flight Number : {this.state.flightNumber}</h6>
             <h6>AirLine Iata : {this.state.airLineIata}</h6>
             <h6>From : {this.state.from}</h6>
@@ -94,9 +85,7 @@ export default class Map extends Component {
             <h6>Arrival Time : {this.state.at}</h6>
           </div>
         </Container>
-        {/* </Col>
-      </Row>
-      </Container> */}
+
       </div>
     );
   }
