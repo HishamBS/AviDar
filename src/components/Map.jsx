@@ -1,15 +1,12 @@
 import React, { useState } from "react";
 import ReactMapGL from "react-map-gl";
-import DeckGL, { ArcLayer,ScatterplotLayer } from "deck.gl";
+import DeckGL, { ArcLayer, ScatterplotLayer } from "deck.gl";
 import "mapbox-gl/dist/mapbox-gl.css";
 import dotenv from "dotenv";
 import "../index.css";
 import Arc from "./Arc";
 
-
 const Map = props => {
-
-
   dotenv.config();
   const [viewport, setViewport] = useState({
     height: "80vh",
@@ -18,8 +15,6 @@ const Map = props => {
     longitude: props.long,
     zoom: 2
   });
-  
-
 
   return (
     <div
@@ -59,21 +54,19 @@ const Map = props => {
               getTargetColor: () => props.targetLine,
               getWidth: () => 3,
               getTilt: 50,
-      //         onHover: ({ object, x, y }) => {
-      //           // console.log(object);
-      //            return (
-      //             <div style={{position: 'absolute', zIndex: 1, pointerEvents: 'none', left: x, top: y}}>
-      //   { object.flightNumber }
-      // </div>)
-                    {/* flightNumber={object.flightNumber}
+              onHover: ({ object, x, y }) => {
+                console.log(object);
+                //            return (
+                //             <div style={{position: 'absolute', zIndex: 1, pointerEvents: 'none', left: x, top: y}}>
+                //   { object.flightNumber }
+                // </div>)
+                /* flightNumber={object.flightNumber}
                     airLineIata={object.airlineIata}
                     from={object.flyFrom}
                     to={object.flyTo}
                     dt={object.departureTime}
-                    at={object.arrivalTime} */}
-                   
-                
-                
+                    at={object.arrivalTime} */
+
                 /* Update tooltip
          http://deck.gl/#/documentation/developer-guide/adding-interactivity?section=example-display-a-tooltip-for-hovered-object
       */
