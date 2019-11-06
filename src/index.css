@@ -1,0 +1,47 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.mapView {
+  z-index: -1;
+  position: absolute;
+}
+.homeJump {
+  text-align: center;
+  color: yellow;
+  text-shadow: 2px 2px black;
+  
+}
+.mainJumbo {
+  background-image: url('https://previews.123rf.com/images/jakarin2521/jakarin25211710/jakarin2521171000018/87678571-radar-screen-and-world-map-in-futuristic-style.jpg');
+  background-size: cover;
+}
+.secJumbo{
+  text-align: center;
+  color: yellow;
+  text-shadow: 2px 2px black;
+
+}
+
+.arc {
+  position: relative;
+  left: 10px;
+  top: 10px;
+  z-index: 0;
+}
+.tabStyles{
+  background-color: black;
+  color: yellow;
+  text-shadow: 1px 1px green;
+  font-weight: bolder;
+}
