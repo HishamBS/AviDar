@@ -1,68 +1,82 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# AviDar
 
-## Available Scripts
+This is a very basic react application that shows all departing and arriving flights for a specific city of the user chosing.
 
-In the project directory, you can run:
+## Description
 
-### `yarn start`
+Lets the user see flights for single day plotted on a map , if the user hover over the arcs , the user can see
+some information about those flights.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Technical Used
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+```
 
-### `yarn test`
+- React
+- Bootstrap with react
+- Ajax (axios) for API
+- React Router
+- React Map gl , deck.gl
+```
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Wireframes
 
-### `yarn build`
+Home Page
+![alt text](./WireFrames/01.png)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Map Page
+![alt text](./WireFrames/02.png)
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+### User Stories
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- The user can search for the wanted city in the home page.
+- The user can't leave the search box empty.
+- The user should input the right spelling for the wanted city.
+- The user can see on the map the actual flights trajectory.
+- The user can interact with the trajectory lines by hovering over them to see the flights info.
 
-### `yarn eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Planning and Development Process
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+I started by making the necessary component hierarchy and implementing the router and the navbar. Then started adding features one by one , and kept the styling for the end.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Problem-Solving Strategy
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+lots and lots of googling and reading official documentation.
 
-## Learn More
+### Unsolved problems
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+searchbar autosuggest and autocomplete.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## APIs Used
 
-### Code Splitting
+```
+https://aviation-edge.com/developers/
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+MapBox by Uber
+```
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+## Acknowledgments
 
-### Making a Progressive Web App
+- SEI Great Instructors Team.
+- Creators of All libraries I have used , such as deck.gl and react-map gl
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+---
 
-### Advanced Configuration
+## References
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+```
+https://docs.mapbox.com/help/tutorials/use-mapbox-gl-js-with-react/
 
-### Deployment
+https://gist.github.com/ryanbaumann/143396c1cbc33efe40a39e137aec6c45
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+https://react-bootstrap.github.io/
 
-### `yarn build` fails to minify
+https://reacttraining.com/react-router/web/guides/quick-start
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+https://alligator.io/react/axios-react/
+
+
+```
