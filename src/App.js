@@ -30,8 +30,7 @@ export default class App extends Component {
     const chosenCity = await axios.get(
       `http://aviation-edge.com/v2/public/autocomplete?key=${process.env.REACT_APP_AV_EDGE_API_KEY}&city=${city}`
     );
-    if (city !=='')
-    {
+    if (city !== "") {
       for (let i = 0; i < chosenCity.data.cities.length; i++) {
         if (chosenCity.data.cities[i].nameCity.toLowerCase() === city) {
           this.setState({
@@ -51,14 +50,12 @@ export default class App extends Component {
           selectedCityLong: parseFloat(chosenCity.data.cities[0].longitudeCity)
         });
         this.handleMap();
-       
       } else {
         alert("you have to enter a valid city");
-      }}
-      else{
-        alert('you cant leave the field empty')
       }
-    
+    } else {
+      alert("you cant leave the field empty");
+    }
   };
 
   // creating the two maps function
@@ -112,8 +109,8 @@ export default class App extends Component {
               flyFrom: cityDB.data[i].nameCity,
               flyTo: this.state.selectedCityName,
               source: [
-                parseFloat(cityDB.data[i].latitudeCity),
-                parseFloat(cityDB.data[i].longitudeCity)
+                parseFloat(cityDB.data[i].longitudeCity),
+                parseFloat(cityDB.data[i].latitudeCity)
               ],
               target: [this.state.selectedCityLong, this.state.selectedCityLat],
               departureTime: arrivngArr[j].departureTime,
@@ -135,8 +132,8 @@ export default class App extends Component {
               flyTo: cityDB.data[i].nameCity,
               source: [this.state.selectedCityLong, this.state.selectedCityLat],
               target: [
-                parseFloat(cityDB.data[i].latitudeCity),
-                parseFloat(cityDB.data[i].longitudeCity)
+                parseFloat(cityDB.data[i].longitudeCity),
+                parseFloat(cityDB.data[i].latitudeCity)
               ],
               departureTime: departingArr[j].departureTime,
               arrivalTime: departingArr[j].arrivalTime,

@@ -12,10 +12,7 @@ code {
     monospace;
 }
 
-.mapView {
-  z-index: -1;
-  position: absolute;
-}
+
 .homeJump {
   text-align: center;
   color: yellow;
@@ -33,11 +30,27 @@ code {
 
 }
 
+.info {
+  position: absolute;
+  left: 0px;
+  top: 110px;
+  z-index: 2;
+  font-size: 20px;
+  background-color: white;
+  width:200px;
+  height: 160px;
+  border:1px solid black;
+  color:black;
+  opacity:0.3;
+}
+
 .arc {
+  z-index: 1;
+
+}
+.mapView {
+  z-index: 0;  
   position: relative;
-  left: 10px;
-  top: 10px;
-  z-index: 0;
 }
 .tabStyles{
   background-color: black;

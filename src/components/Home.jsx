@@ -2,13 +2,18 @@ import React, { Component } from "react";
 import { Jumbotron, Container, Form, Button, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../index.css";
+import dotenv from "dotenv";
+dotenv.config();
+
 export default class Home extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      city: ""
+      city: "",
+      suggestions:[]
     };
   }
+ 
   render() {
     return (
       <div>
@@ -23,7 +28,7 @@ export default class Home extends Component {
             </Container>
             <Form className='homeJump'>
               <Form.Row>
-                <Form.Group as={Col} controlId="formGridPassword">
+                <Form.Group as={Col}>
                   <Form.Control
                     type="search"
                     placeholder="type the city iata or name in here"
