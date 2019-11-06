@@ -59,12 +59,12 @@ const Map = props => {
               getTargetColor: () => props.targetLine,
               getWidth: () => 3,
               getTilt: 50,
-              onHover: ({ object, x, y }) => {
-                // console.log(object);
-                 return (
-                  <div style={{position: 'absolute', zIndex: 1, pointerEvents: 'none', left: x, top: y}}>
-        { object.flightNumber }
-      </div>)
+      //         onHover: ({ object, x, y }) => {
+      //           // console.log(object);
+      //            return (
+      //             <div style={{position: 'absolute', zIndex: 1, pointerEvents: 'none', left: x, top: y}}>
+      //   { object.flightNumber }
+      // </div>)
                     {/* flightNumber={object.flightNumber}
                     airLineIata={object.airlineIata}
                     from={object.flyFrom}
