@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Jumbotron, Container, Form, Button, Row, Col } from "react-bootstrap";
+import { Jumbotron, Container, Form, Button, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "../index.css";
 import dotenv from "dotenv";

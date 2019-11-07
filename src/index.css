@@ -32,8 +32,8 @@ code {
 
 .info {
   position: absolute;
-  left: 0px;
-  top: 130px;
+  /* left: 0px;
+  top: 130px; */
   z-index: 2;
   font-size: 20px;
   background-color: white;

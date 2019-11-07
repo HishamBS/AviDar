@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, BrowserRouter, Switch, Redirect, Link } from "react-router-dom";
+import { Route, BrowserRouter, Switch} from "react-router-dom";
 import "./index.css";
 import Home from "./components/Home";
 import Flights from "./components/Flights";
@@ -39,7 +39,7 @@ export default class App extends Component {
         }
       }
 
-      if (this.state.cityFound == true) {
+      if (this.state.cityFound === true) {
         //setting the city iata and coordinates to the state
         console.log("hi");
 

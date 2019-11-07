@@ -22,7 +22,9 @@ export default class Map extends Component {
       to: "",
       dt: "",
       at: "",
-      isHidden: true
+      isHidden: true,
+      x: "",
+      y: ""
     };
   }
 
@@ -44,7 +46,6 @@ export default class Map extends Component {
             viewState={this.state.viewport}
             layers={[
               new ArcLayer({
-                
                 id: "flight-arcs",
                 data: this.props.data,
                 pickable: true,
@@ -64,8 +65,12 @@ export default class Map extends Component {
                       to: object.flyTo,
                       dt: object.departureTime,
                       at: object.arrivalTime,
-                      isHidden: false
+                      isHidden: false,
+                      x: x,
+                      y: y
                     });
+                    console.log(x);
+                    console.log(y);
                   } catch (err) {}
                 }
               })
@@ -75,7 +80,11 @@ export default class Map extends Component {
         <Container>
           <div
             className="info"
-            style={this.state.isHidden ? { display: "none" } : {}}
+            style={
+              this.state.isHidden
+                ? { display: "none" }
+                : { left: `${this.state.x}px`, top: `${this.state.y+100}px` }
+            }
           >
             <h6>Flight Number : {this.state.flightNumber}</h6>
             <h6>AirLine Iata : {this.state.airLineIata}</h6>
@@ -85,7 +94,6 @@ export default class Map extends Component {
             <h6>Arrival Time : {this.state.at}</h6>
           </div>
         </Container>
-
       </div>
     );
   }
