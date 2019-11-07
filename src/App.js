@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, BrowserRouter, Switch} from "react-router-dom";
+import { Route, BrowserRouter, Switch } from "react-router-dom";
 import "./index.css";
 import Home from "./components/Home";
 import Flights from "./components/Flights";
@@ -28,7 +28,7 @@ export default class App extends Component {
     //get the typed city name and convert it to Iata
     city = city.toLowerCase();
     const chosenCity = await axios.get(
-      `http://aviation-edge.com/v2/public/autocomplete?key=${process.env.REACT_APP_AV_EDGE_API_KEY}&city=${city}`
+      `https://aviation-edge.com/v2/public/autocomplete?key=${process.env.REACT_APP_AV_EDGE_API_KEY}&city=${city}`
     );
     if (city !== "") {
       for (let i = 0; i < chosenCity.data.cities.length; i++) {
@@ -68,12 +68,12 @@ export default class App extends Component {
 
       //creating all arriving flights to chosen city
       const arrivingToCity = await axios.get(
-        `http://aviation-edge.com/v2/public/routes?key=${process.env.REACT_APP_AV_EDGE_API_KEY}&arrivalIata=${this.state.selectedCityIata}`
+        `https://aviation-edge.com/v2/public/routes?key=${process.env.REACT_APP_AV_EDGE_API_KEY}&arrivalIata=${this.state.selectedCityIata}`
       );
 
       //creating all departing flights from chosen city
       const departingFromCity = await axios.get(
-        `http://aviation-edge.com/v2/public/routes?key=${process.env.REACT_APP_AV_EDGE_API_KEY}&departureIata=${this.state.selectedCityIata}`
+        `https://aviation-edge.com/v2/public/routes?key=${process.env.REACT_APP_AV_EDGE_API_KEY}&departureIata=${this.state.selectedCityIata}`
       );
 
       // creating arrays of iatas to compose the array of objects which will plot the arcs to the map
@@ -161,7 +161,6 @@ export default class App extends Component {
   render() {
     return (
       <div>
-      
         <BrowserRouter>
           <Navigation />
           <Switch>
